@@ -26,7 +26,6 @@ export async function loginAction(_prevState: LoginActionState, queryData: FormD
   }
 
   const { session, errorMessage } = await loginUser({ username, password });
-
   if (session && !errorMessage) {
     const cookieStore = await cookies();
 

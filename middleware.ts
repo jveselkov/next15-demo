@@ -1,19 +1,19 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { sessionCookieName, validateSession } from './src/lib/auth/session';
+import { sessionCookieName } from './src/lib/auth/session';
 import { authRoutes, todoRoutes } from './src/lib/router';
 
-export function middleware(request: NextRequest) {
-  const sessionId = request.cookies.get(sessionCookieName)?.value;
-  const isValidSession = sessionId ? validateSession(sessionId) : false;
+export async function middleware(request: NextRequest) {
+  const session = request.cookies.get(sessionCookieName)?.value;
+
   const isAuthRoute = Object.values(authRoutes).includes(request.nextUrl.pathname);
   const isTodosRoute = Object.values(todoRoutes).includes(request.nextUrl.pathname);
 
-  if (!isAuthRoute && !isValidSession) {
+  if (!isAuthRoute && !session) {
     return NextResponse.redirect(new URL(authRoutes.Login, request.url));
   }
 
-  if (isValidSession && !isTodosRoute) {
+  if (session && !isTodosRoute) {
     return NextResponse.redirect(new URL(todoRoutes.List, request.url));
   }
 

@@ -1,8 +1,13 @@
-import type { ReactNode } from 'react';
-
+'use client';
+import { checkSession } from '@/actions/checkSessionAction';
 import { logoutAction } from '@/actions/logoutAction';
+import { useEffect, type ReactNode } from 'react';
 
-export default function AuthLayout({ children }: { children: ReactNode }) {
+export default function TodosLayout({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    checkSession();
+  }, []);
+
   return (
     <>
       <nav className="flex">
