@@ -1,9 +1,26 @@
 import { hash, verify } from '@node-rs/argon2';
+import { generateRandomString } from '@oslojs/crypto/random';
 import { eq } from 'drizzle-orm';
 
 import { db, table } from '@/lib/db';
 
-import { createSession, generateUserId, validatePassword, validateUsername } from './session';
+import { createSession } from './session';
+
+const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_';
+
+export function generateUserId(length = 21): string {
+  return generateRandomString({ read: (bytes) => crypto.getRandomValues(bytes) }, alphabet, length);
+}
+
+export function validateUsername(username: unknown): username is string {
+  return (
+    typeof username === 'string' && username.length >= 3 && username.length <= 31 && /^[a-z0-9_-]+$/.test(username)
+  );
+}
+
+export function validatePassword(password: unknown): password is string {
+  return typeof password === 'string' && password.length >= 6 && password.length <= 255;
+}
 
 export interface AuthData {
   username: string;
