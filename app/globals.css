@@ -28,9 +28,7 @@ main {
 
 form {
   border: 1px solid lightgray;
-
   padding: 0.5rem;
-
 
   div.input {
     display: flex;

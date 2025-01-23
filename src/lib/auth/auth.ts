@@ -1,6 +1,8 @@
-import { db, table } from '@/lib/db';
 import { hash, verify } from '@node-rs/argon2';
 import { eq } from 'drizzle-orm';
+
+import { db, table } from '@/lib/db';
+
 import { createSession, generateUserId, validatePassword, validateUsername } from './session';
 
 export interface AuthData {

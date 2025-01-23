@@ -1,5 +1,6 @@
-import { logoutAction } from '@/actions/logoutAction';
 import type { ReactNode } from 'react';
+
+import { logoutAction } from '@/actions/logoutAction';
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (

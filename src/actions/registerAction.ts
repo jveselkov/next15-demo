@@ -1,11 +1,11 @@
 'use server';
 
-import { registerUser } from '@/lib/auth/auth';
-import { sessionCookieName } from '@/lib/auth/session';
-
-import { afterAuthRoute } from '@/lib/router';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+
+import { registerUser } from '@/lib/auth/auth';
+import { sessionCookieName } from '@/lib/auth/session';
+import { afterAuthRoute } from '@/lib/router';
 
 export interface RegisterActionState {
   username?: string;

@@ -1,9 +1,9 @@
-import { db, table } from '@/lib/db';
 import { generateRandomString } from '@oslojs/crypto/random';
 import { sha256 } from '@oslojs/crypto/sha2';
-
 import { encodeBase32LowerCaseNoPadding, encodeHexLowerCase } from '@oslojs/encoding';
 import { eq } from 'drizzle-orm';
+
+import { db, table } from '@/lib/db';
 
 const DAY_IN_MS = 1000 * 60 * 60 * 24;
 
