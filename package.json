@@ -19,11 +19,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@node-rs/argon2": "^2.0.2",
+    "@oslojs/crypto": "^1.0.1",
+    "@oslojs/encoding": "^1.1.0",
     "drizzle-orm": "^0.38.4",
     "next": "15.1.6",
     "postgres": "^3.4.5",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "22.10.7",

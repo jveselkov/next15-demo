@@ -1,3 +1,12 @@
+nav {
+  margin-inline: 0.5rem;
+  margin-block-end: 1rem;
+
+  a {
+    margin-inline-end: 1rem;
+  }
+}
+
 main {
   max-width: clamp(10rem, 100%, 40rem);
   margin: 0 auto;

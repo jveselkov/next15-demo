@@ -2,7 +2,7 @@
 
 import { useActionState } from 'react';
 
-import { loginAction } from './registerAction';
+import { loginAction } from '@/actions/registerAction';
 
 export const RegisterForm = () => {
   const [formState, formAction, isPending] = useActionState(loginAction, {});
@@ -12,7 +12,7 @@ export const RegisterForm = () => {
       <div className="flex flex-column">
         <div className="input">
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" required defaultValue={formState.name} />
+          <input type="text" name="name" required defaultValue={formState.username} />
         </div>
 
         <div className="input">
@@ -29,9 +29,7 @@ export const RegisterForm = () => {
           {isPending ? 'Register...' : 'Register'}
         </button>
 
-        {!isPending && !formState?.success && formState?.message && (
-          <p className="error">Message: {formState.message}</p>
-        )}
+        {!isPending && formState?.message && <p className="error">Message: {formState.message}</p>}
       </div>
     </form>
   );

@@ -8,3 +8,5 @@ export const authRoutes = {
   Login: '/login',
   Register: '/register',
 };
+
+export const afterAuthRoute = todoRoutes.List;
