@@ -21,6 +21,8 @@ export type Session = typeof session.$inferSelect;
 
 export const todo = pgTable('todo', {
   id: text('id').primaryKey(),
+  title: text('title').notNull(),
+  description: text('description').notNull(),
   userId: text('user_id')
     .notNull()
     .references(() => user.id),
@@ -29,10 +31,3 @@ export const todo = pgTable('todo', {
 });
 
 export type Todo = typeof todo.$inferSelect;
-
-export const role = pgTable('role', {
-  id: text('id').primaryKey(),
-  name: text('name').notNull(),
-});
-
-export type Role = typeof role.$inferSelect;

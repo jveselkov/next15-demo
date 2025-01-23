@@ -1,0 +1,39 @@
+main {
+  max-width: clamp(10rem, 100%, 40rem);
+  margin: 0 auto;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+
+form {
+  border: 1px solid lightgray;
+
+  padding: 0.5rem;
+
+
+  div.input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .error {
+    color: tomato;
+  }
+
+  input,
+  button[type=submit] {
+    margin-block: 0.5rem;
+  }
+}
