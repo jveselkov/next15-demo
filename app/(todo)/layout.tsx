@@ -1,7 +1,8 @@
 'use client';
+import { type ReactNode, useEffect } from 'react';
+
 import { checkSession } from '@/actions/checkSessionAction';
 import { logoutAction } from '@/actions/logoutAction';
-import { useEffect, type ReactNode } from 'react';
 
 export default function TodosLayout({ children }: { children: ReactNode }) {
   useEffect(() => {

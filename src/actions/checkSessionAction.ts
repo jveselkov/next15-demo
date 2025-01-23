@@ -1,6 +1,8 @@
 'use server';
-import { sessionCookieName, validateSession } from '@/lib/auth/session';
 import { cookies } from 'next/headers';
+
+import { sessionCookieName, validateSession } from '@/lib/auth/session';
+
 import { logoutAction } from './logoutAction';
 
 export async function checkSession() {
