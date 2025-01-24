@@ -1,7 +1,8 @@
 'use client';
 
-import { createTodoAction } from '@/actions';
 import { useActionState } from 'react';
+
+import { createTodoAction } from '@/actions';
 
 export const NewTodoForm = () => {
   const [formState, formAction, isPending] = useActionState(createTodoAction, {});

@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import { todoRoutes } from '@/lib/router';
 import { TodosList } from '@/widgets';
-import Link from 'next/link';
 
 export default async function TodosPage() {
   return (

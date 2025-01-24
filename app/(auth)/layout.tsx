@@ -1,6 +1,7 @@
-import { authRoutes } from '@/lib/router';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+
+import { authRoutes } from '@/lib/router';
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
