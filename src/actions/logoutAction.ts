@@ -7,13 +7,13 @@ import { authRoutes } from '@/lib/router';
 
 export async function logoutAction() {
   const cookieStore = await cookies();
-  const sessionId = cookieStore.get(sessionCookieName);
+  const sessionId = cookieStore.get(sessionCookieName)?.value;
 
-  if (!sessionId) {
+  if (sessionId === undefined) {
     redirect(authRoutes.Login);
   }
 
-  await invalidateSession(sessionId.value);
+  await invalidateSession(sessionId);
   cookieStore.delete(sessionCookieName);
 
   redirect(authRoutes.Login);
