@@ -1,7 +1,7 @@
 'use client';
 import { type ReactNode } from 'react';
 
-import { logoutAction } from '@/actions/logoutAction';
+import { logoutAction } from '@/actions/authActions/logoutAction';
 
 export default function TodosLayout({ children }: { children: ReactNode }) {
   return (

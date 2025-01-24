@@ -2,10 +2,10 @@
 
 import { useActionState } from 'react';
 
-import { loginAction } from '@/actions/registerAction';
+import { registerAction } from '@/actions';
 
 export const RegisterForm = () => {
-  const [formState, formAction, isPending] = useActionState(loginAction, {});
+  const [formState, formAction, isPending] = useActionState(registerAction, {});
 
   return (
     <form action={formAction}>

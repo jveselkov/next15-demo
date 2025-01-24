@@ -1,27 +1,26 @@
 'use client';
 
+import { editTodoAction } from '@/actions';
 import { useActionState } from 'react';
 
-import { loginAction } from '@/actions';
-
-export const LoginForm = () => {
-  const [formState, formAction, isPending] = useActionState(loginAction, {});
+export const EditTodoForm = () => {
+  const [formState, formAction, isPending] = useActionState(editTodoAction, {});
 
   return (
     <form action={formAction}>
       <div className="flex flex-column">
         <div className="input">
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" required defaultValue={formState.username} />
+          <label htmlFor="title">Name</label>
+          <input type="text" name="title" required defaultValue={formState.title} />
         </div>
 
         <div className="input">
           <label htmlFor="password">Password</label>
-          <input type="password" name="password" required defaultValue={formState.password} />
+          <textarea name="description" required defaultValue={formState.description} />
         </div>
 
         <button type="submit" disabled={isPending}>
-          {isPending ? 'Login...' : 'Login'}
+          {isPending ? 'Creating...' : 'Create'}
         </button>
 
         {!isPending && formState?.message && <p className="error">Message: {formState.message}</p>}

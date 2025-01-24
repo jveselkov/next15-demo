@@ -1,3 +1,5 @@
+import { EditTodoForm } from '@/widgets';
+
 export default function Home() {
-  return <>edit todo</>;
+  return <EditTodoForm />;
 }

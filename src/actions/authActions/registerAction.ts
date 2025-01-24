@@ -13,7 +13,10 @@ export interface RegisterActionState {
   confirmPassword?: string;
   message?: string;
 }
-export async function loginAction(_prevState: RegisterActionState, queryData: FormData): Promise<RegisterActionState> {
+export async function registerAction(
+  _prevState: RegisterActionState,
+  queryData: FormData,
+): Promise<RegisterActionState> {
   const username = queryData.get('name') as string;
   const password = queryData.get('password') as string;
   const confirmPassword = queryData.get('confirm_password') as string;

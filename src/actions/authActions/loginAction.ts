@@ -21,7 +21,7 @@ export async function loginAction(_prevState: LoginActionState, queryData: FormD
   if (!username || !password) {
     return {
       ...request,
-      message: 'please type username and password',
+      message: 'please enter username and password',
     };
   }
 

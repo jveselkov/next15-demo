@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 
 import { sessionCookieName, validateSession } from '@/lib/auth/session';
 
-import { logoutAction } from './logoutAction';
+import { logoutAction } from './authActions/logoutAction';
 
 export async function checkSession() {
   const cookieStore = await cookies();
